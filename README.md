@@ -23,55 +23,55 @@ Below you'll find what's included in the tool, and reasons why I included them i
 
 ### Frontend
 
-| Package  | Reason                                                                                                                                                                                                                                                       |
-|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Next.js  | There unfortunately is no competition. Next is the best way to use React, and React is the best framework for quickly building new apps. Not that React is the best full stop, it's just great because Claude et. al tend to write pretty banger React code. |
-| Tailwind | CSS is fine, but I like to define my styles at the component level and have them Just Work™ and not have to hassle with other style solutions.                                                                                                               |
-| Motion   | Best animation library hands down. So pretty!!!                                                                                                                                                                                                              |
+| Package                              | Reason                                                                                                                                                                                                                                                       |
+|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Next.js](https://nextjs.org/)       | There unfortunately is no competition. Next is the best way to use React, and React is the best framework for quickly building new apps. Not that React is the best full stop, it's just great because Claude et. al tend to write pretty banger React code. |
+| [Tailwind](https://tailwindcss.com/) | CSS is fine, but I like to define my styles at the component level and have them Just Work™ and not have to hassle with other style solutions.                                                                                                               |
+| [Motion](https://motion.dev/)        | Best animation library hands down. So pretty!!!                                                                                                                                                                                                              |
 
 ### Frontend addons
 
-| Package            | Reason                                                                                                                    |
-|--------------------|---------------------------------------------------------------------------------------------------------------------------|
-| TanStack Query     | You try doing async calls in react without this lol. Saves so much headache especially when you need to invalidate cache. |
-| Zustand (optional) | It's not Redux or MobX :)                                                                                                 |
-| Jotai (optional)   | It's not Redux, MobX or Zustand :)                                                                                        |
+| Package                                                 | Reason                                                                                                                    |
+|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| [TanStack Query](https://tanstack.com/query)            | You try doing async calls in react without this lol. Saves so much headache especially when you need to invalidate cache. |
+| [Zustand](https://github.com/pmndrs/zustand) (optional) | State management library. It's not Redux or MobX :)                                                                       |
+| [Jotai](https://github.com/pmndrs/jotai) (optional)     | State management library. It's not Redux, MobX or Zustand :)                                                              |
 
 
 ### Backend
 
-| Package   | Reason                                                                                                                          |
-|-----------|---------------------------------------------------------------------------------------------------------------------------------|
-| Next.js   | Because the `/api` directory is goated when you actually deploy. Remember the priority of this is to go fast, not go efficient. |
-| tRPC      | I ❤️ type-safety                                                                                                                |
+| Package                        | Reason                                                                                                                          |
+|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| [Next.js](https://nextjs.org/) | Because the `/api` directory is goated when you actually deploy. Remember the priority of this is to go fast, not go efficient. |
+| [tRPC](https://trpc.io/)       | I ❤️ type-safety                                                                                                                |
 
 ### Database
 
-| Package   | Reason                                                                                                                                                                |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Drizzle   | I like writing SQL. Unfortunately SQL isn't type safe. Drizzle is the best way to write stuff SQL-like and still get type-safety. Sorry Prisma, you don't come close. |
-| Turso     | Do you want to have a free 5GB edge database service with up to 500 individual databases all with SQLite? Yeah. I do too.                                             |
+| Package                              | Reason                                                                                                                                                                |
+|--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Drizzle](https://orm.drizzle.team/) | I like writing SQL. Unfortunately SQL isn't type safe. Drizzle is the best way to write stuff SQL-like and still get type-safety. Sorry Prisma, you don't come close. |
+| [Turso](https://turso.tech/)         | Do you want to have a free 5GB edge database service with up to 500 individual databases all with SQLite? Yeah. I do too.                                             |
 
 ### Other addons
 
-| Package     | Reason                                                      |
-|-------------|-------------------------------------------------------------|
-| Zod         | Again, I ❤️ type-safety                                     |
-| zod-drizzle | Self-explanatory. Generate Zod schemas from Drizzle schema. |
+| Package                                          | Reason                                                      |
+|--------------------------------------------------|-------------------------------------------------------------|
+| [Zod](https://zod.dev/)                          | Again, I ❤️ type-safety                                     |
+| [zod-drizzle](https://orm.drizzle.team/docs/zod) | Self-explanatory. Generate Zod schemas from Drizzle schema. |
 
 ### Dev Tools
 
-| Package                          | Reason                                                                                                                                                                                                 |
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ESLint                           | I ❤️ love good linting rules too.                                                                                                                                                                      |
-| Prettier                         | I ❤️ love making my code actually look good and readable in a proper format.                                                                                                                           |
-| prettier-plugin-tailwindcss      | Why `create-next-app` ships with Tailwind as an option but not Prettier or the Tailwind Prettier plugin is beyond me. Reduces build times and makes life easier when writing components with Tailwind. |
+| Package                                                                                           | Reason                                                                                                                                                                                                 |
+|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ESLint](https://eslint.org/)                                                                     | I ❤️ love good linting rules too.                                                                                                                                                                      |
+| [Prettier](https://prettier.io/)                                                                  | I ❤️ love making my code actually look good and readable in a proper format.                                                                                                                           |
+| [prettier-plugin-tailwindcss](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier) | Why `create-next-app` ships with Tailwind as an option but not Prettier or the Tailwind Prettier plugin is beyond me. Reduces build times and makes life easier when writing components with Tailwind. |
 
 ### Theme
 
-| Package          | Reason |
-|------------------|--------|
-| Catppuccin Mocha | :3     |
+| Package                                             | Reason |
+|-----------------------------------------------------|--------|
+| [Catppuccin Mocha](https://catppuccin.com/palette/) | :3     |
 
 
 ## Development
