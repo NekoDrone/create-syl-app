@@ -8,7 +8,8 @@
   },
   "files": [
     "dist",
-    "templates"
+    "templates",
+    "tsconfig.json"
   ],
   "keywords": [],
   "author": "nekodrone",
