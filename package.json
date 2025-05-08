@@ -4,9 +4,13 @@
   "description": "A simple CLI tool to scaffold new projects with my preferred tech stack.",
   "main": "index.ts",
   "scripts": {
-    "start": "node index.ts",
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "keywords": [],
   "author": "Sylfr Serenity Tan",
   "license": "ISC",
