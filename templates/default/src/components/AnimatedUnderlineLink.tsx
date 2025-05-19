@@ -27,8 +27,9 @@ export const AnimatedUnderlineLink: FC<AnimatedLinkProps> = ({
           hover: { scaleX: 1 },
         }}
         transition={{
-          duration: 0.1,
-          ease: "easeInOut",
+          type: "spring",
+          duration: 0.25,
+          bounce: 0.3,
         }}
       />
     </motion.a>
