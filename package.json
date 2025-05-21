@@ -13,7 +13,7 @@
   ],
   "keywords": [],
   "author": "nekodrone",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
     "@inquirer/prompts": "^7.5.0",
