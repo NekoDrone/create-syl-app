@@ -2,17 +2,33 @@
   "name": "create-syl-app",
   "version": "0.1.0",
   "description": "A simple CLI tool to scaffold new projects with my preferred tech stack.",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "ts-node index.ts"
+    "dev": "ts-node index.ts",
+    "prepare": "pnpm build",
+    "build": "tsc && tsc-alias && cpy \"templates/**/*\" \"templates/**/.*\" dist/templates",
+    "start": "pnpm build && node dist/index.js"
+  },
+  "bin": {
+    "create-syl-app": "./dist/index.js"
   },
   "files": [
     "dist",
-    "templates",
-    "tsconfig.json"
+    "templates"
   ],
-  "keywords": [],
-  "author": "nekodrone",
+  "keywords": [
+    "nextjs",
+    "tailwind",
+    "scaffold",
+    "template",
+    "cli",
+    "prettier"
+  ],
+  "imports": {
+    "@/*": "./dist/*"
+  },
+  "author": "Sylfr Serenity Tan Yi Qing",
   "license": "MIT",
   "packageManager": "pnpm@10.10.0",
   "dependencies": {
@@ -25,10 +41,12 @@
     "@eslint/js": "^9.27.0",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.15.17",
+    "cpy-cli": "^5.0.0",
     "eslint": "^9.27.0",
     "globals": "^16.1.0",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.16",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
