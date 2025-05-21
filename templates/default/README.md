@@ -1,3 +1,5 @@
+# {{PROJECT_NAME}}
+
 This project was bootstrapped with `create-syl-app`.
 
 ## Usage
