@@ -14,8 +14,7 @@
     "create-syl-app": "./dist/index.js"
   },
   "files": [
-    "dist",
-    "templates"
+    "dist"
   ],
   "keywords": [
     "nextjs",
