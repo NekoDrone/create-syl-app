@@ -56,7 +56,7 @@ const replaceProjectName = async (
             if (fs.existsSync(filePath)) {
                 let content = fs.readFileSync(filePath, "utf8");
 
-                content = content.replace(/\{\{PROJECT_NAME\}\}/g, projectName);
+                content = content.replace(/\{\{PROJECT_NAME}}/g, projectName);
 
                 fs.writeFileSync(filePath, content);
             }
@@ -65,3 +65,5 @@ const replaceProjectName = async (
 
     printWithColour(PrintColour.GREEN, "✅  Done!", { bold: true });
 };
+
+export const configureTurso = () => {};
