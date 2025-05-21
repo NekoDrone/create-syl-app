@@ -2,6 +2,7 @@ import { PrintColour, printWithColour } from "@/utils/print";
 import fs from "fs-extra";
 import * as path from "node:path";
 import { PROJECT_ROOT } from "@/consts";
+import * as inquirer from "@inquirer/prompts";
 
 export interface DefaultTemplateOpts {
     projectName: string;
@@ -66,4 +67,51 @@ const replaceProjectName = async (
     printWithColour(PrintColour.GREEN, "✅  Done!", { bold: true });
 };
 
-export const configureTurso = () => {};
+export const configureEnvVariables = async (targetDir: string) => {
+    printWithColour(
+        PrintColour.BLUE,
+        "🔧 Configuring environment variables...",
+    );
+
+    const examplePath = path.join(targetDir, ".env.example");
+    const envPath = path.join(targetDir, ".env");
+
+    await fs.copy(examplePath, envPath);
+
+    try {
+        const envFileContents = fs.readFileSync(envPath, "utf-8");
+
+        const lines = envFileContents.split("\n");
+
+        for (let line of lines) {
+            if (line.trim() === "" || line.trim().startsWith("#")) continue;
+
+            const match = line.match(/^([A-Za-z0-9_]+)=(.*)$/);
+            if (match) {
+                const [, name, defaultValue] = match;
+                const question = {
+                    message: name,
+                    default: defaultValue || undefined,
+                };
+                const answer = await inquirer.input(question);
+                line = `${name}=${answer}`;
+            }
+        }
+
+        const newEnvContent = lines.join("\n");
+        fs.writeFileSync(envPath, newEnvContent);
+
+        printWithColour(
+            PrintColour.GREEN,
+            "✅  Environment variables configured!",
+            { bold: true },
+        );
+    } catch (e) {
+        printWithColour(
+            PrintColour.RED,
+            "❌  Error configuring environment variables",
+            { bold: true },
+        );
+        throw e;
+    }
+};

@@ -2,7 +2,10 @@ import * as inquirer from "@inquirer/prompts";
 import { PrintColour, printWithColour } from "@/utils/print";
 import * as path from "node:path";
 import { isDirectoryEmpty } from "@/utils/fs";
-import { insertDefaultTemplate } from "@/utils/templates";
+import {
+    configureEnvVariables,
+    insertDefaultTemplate,
+} from "@/utils/templates";
 
 export const bootstrap = async () => {
     printWithColour(
@@ -39,12 +42,13 @@ export const bootstrap = async () => {
 
     await insertDefaultTemplate(targetDir, { projectName });
 
-    const isDoingDbSetup = await inquirer.confirm({
-        message: "Would you like to set up Turso now?",
+    const isDoingEnvSetup = await inquirer.confirm({
+        message:
+            "Would you like to set up a .env now? (You will need to do so eventually)",
         default: false,
     });
 
-    if (isDoingDbSetup) {
-        // TODO: configure .env for Turso.
+    if (isDoingEnvSetup) {
+        await configureEnvVariables(targetDir);
     }
 };
