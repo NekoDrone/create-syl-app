@@ -50,27 +50,27 @@ export const printWithColour = (
             break;
     }
 
-    let actualOpts = opts ?? {
+    const actualOpts = opts ?? {
         bold: false,
         italic: false,
         underline: false,
     };
 
-    if (actualOpts.bold) {
+    if (actualOpts.bold && actualOpts.underline && actualOpts.italic) {
+        // why would you ever use this, you shouldn't lol. included for completeness.
+        console.log(chalkColour.bold.underline.italic(message));
+    } else if (actualOpts.underline && actualOpts.italic) {
+        console.log(chalkColour.underline.italic(message));
+    } else if (actualOpts.bold && actualOpts.italic) {
+        console.log(chalkColour.bold.italic(message));
+    } else if (actualOpts.bold && actualOpts.underline) {
+        console.log(chalkColour.bold.underline(message));
+    } else if (actualOpts.bold) {
         console.log(chalkColour.bold(message));
     } else if (actualOpts.underline) {
         console.log(chalkColour.underline(message));
     } else if (actualOpts.italic) {
         console.log(chalkColour.italic(message));
-    } else if (actualOpts.bold && actualOpts.underline) {
-        console.log(chalkColour.bold.underline(message));
-    } else if (actualOpts.bold && actualOpts.italic) {
-        console.log(chalkColour.bold.italic(message));
-    } else if (actualOpts.underline && actualOpts.italic) {
-        console.log(chalkColour.underline.italic(message));
-    } else if (actualOpts.bold && actualOpts.underline && actualOpts.italic) {
-        // why would you ever use this, you shouldn't lol. included for completeness.
-        console.log(chalkColour.bold.underline.italic(message));
     } else {
         console.log(chalkColour(message));
     }
