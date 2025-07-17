@@ -7,14 +7,15 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "prepare": "pnpm build",
-    "build": "tsc && tsc-alias && cpy \"templates/**/*\" \"templates/**/.*\" dist/templates",
+    "build": "tsc && tsc-alias && cpy \"templates/**/*\" \"templates/**/.*\" dist/templates --dot",
     "start": "pnpm build && node dist/index.js"
   },
   "bin": {
     "create-syl-app": "./dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "dist/templates/default/.gitignore"
   ],
   "keywords": [
     "nextjs",
