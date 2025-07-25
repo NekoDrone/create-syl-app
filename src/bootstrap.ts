@@ -6,6 +6,8 @@ import {
     configureEnvVariables,
     insertDefaultTemplate,
 } from "@/utils/templates";
+import { initialiseGitRepo } from "@/utils/git";
+import { installDeps } from "@/utils/installDeps";
 
 export const bootstrap = async () => {
     printWithColour(
@@ -50,5 +52,17 @@ export const bootstrap = async () => {
 
     if (isDoingEnvSetup) {
         await configureEnvVariables(targetDir);
+    }
+
+    initialiseGitRepo(targetDir);
+
+    const isInstallDeps = await inquirer.confirm({
+        message:
+            "Would you like to install dependencies? (run pnpm install for you)",
+        default: false,
+    });
+
+    if (isInstallDeps) {
+        installDeps(targetDir);
     }
 };

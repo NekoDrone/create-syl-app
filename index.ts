@@ -8,7 +8,7 @@ bootstrap().then(() => {
     printWithColour(PrintColour.GREEN, "✨  Finished! Have fun building! 💜️ ");
     printWithColour(
         PrintColour.CYAN,
-        "Remember to run `pnpm install` before running the dev server!",
+        "Remember to run `pnpm install` before running the dev server if you haven't already!!!",
         { bold: true },
     );
 });
