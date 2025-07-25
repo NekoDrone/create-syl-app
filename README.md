@@ -94,6 +94,12 @@ You can symlink this project into your npm globally by running `pnpm link` in th
 
 You can unlink by running `pnpm unlink` (and can optionally provide `-r` or `--recursive` to unlink in every package found in subdirectories or in every workspace package when executed inside a workspace.). See [pnpm docs](https://pnpm.io/cli/unlink).
 
+## Deployment
+
+To publish, remember to bump the version appropiately with `pnpm version <major|minor|patch>` in accordance to semver.
+
+Then, simply run `pnpm publish` and log in to npm.
+
 ## Contribution
 
 Happy to take any requests to improve the project, and issues are always welcome, but this is mostly just for myself so that I don't spend an hour configuring my `tsconfig.json` after running `create-next-app`.
