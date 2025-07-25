@@ -1,6 +1,6 @@
 {
   "name": "create-syl-app",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A simple CLI tool to scaffold new projects with my preferred tech stack.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
