@@ -70,7 +70,7 @@ const IndexPage = () => {
       </div>
 
       <p>
-        For more information about what's included in the bootstrap, please see
+        For more information about what&apos;s included in the bootstrap, please see
         the repository{" "}
         <AnimatedUnderlineLink
           className="text-ctp-blue transition"

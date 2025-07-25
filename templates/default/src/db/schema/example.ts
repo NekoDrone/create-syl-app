@@ -1,7 +1,7 @@
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { sql } from "drizzle-orm";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
-import { z } from "zod";
+import type { z } from "zod";
 
 export const exampleSchema = sqliteTable(
   "example",
